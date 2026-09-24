@@ -1,1 +1,476 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Floricultura Flori e Bela - Flores, plantas naturais, presentes e artigos para presentes em Brasília/DF. Entrega no Riacho Fundo I e região. CNPJ: 05.475.756/0001-00">
+    <meta name="keywords" content="floricultura, flores naturais, plantas, Brasília, Riacho Fundo I, Floricultura Flori e Bela, presentes, flores artificiais">
+    <title>Floricultura Flori e Bela | Flores e Plantas em Brasília/DF</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Configurações de Cores Personalizadas -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        floral: {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                            700: '#be185d',
+                            800: '#9d174d',
+                            900: '#831843',
+                        },
+                        terra: {
+                            50: '#fdf8f6',
+                            100: '#f2e8e5',
+                            200: '#eaddd7',
+                            300: '#e0cec7',
+                            400: '#d2bab0',
+                            500: '#bfa094',
+                            600: '#a18072',
+                            700: '#977669',
+                            800: '#846358',
+                            900: '#43302b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: #db2777;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
 
+    <!-- Header / Navegação -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex flex-wrap justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i class="fas fa-seedling text-3xl text-floral-600"></i>
+                <div>
+                    <h1 class="text-2xl font-bold text-terra-800 leading-tight">Flori e Bela</h1>
+                    <p class="text-xs text-gray-500">Floricultura desde 2002</p>
+                </div>
+            </div>
+            
+            <button id="menu-btn" class="md:hidden text-2xl text-terra-700 focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul id="menu" class="hidden md:flex space-x-6 text-terra-700 font-medium w-full md:w-auto mt-4 md:mt-0">
+                <li><a href="#home" class="hover:text-floral-600 transition">Início</a></li>
+                <li><a href="#sobre" class="hover:text-floral-600 transition">Quem Somos</a></li>
+                <li><a href="#produtos" class="hover:text-floral-600 transition">Produtos</a></li>
+                <li><a href="#contato" class="hover:text-floral-600 transition">Contato</a></li>
+                <li><a href="#localizacao" class="hover:text-floral-600 transition">Localização</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-bg h-[500px] flex items-center justify-center text-center text-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Floricultura Flori e Bela</h2>
+                <p class="text-xl md:text-2xl mb-8 drop-shadow-md max-w-2xl mx-auto">
+                    Flores naturais, plantas e presentes especiais para todas as ocasiões.
+                </p>
+                <div class="space-x-4">
+                    <a href="https://wa.me/5562993026597" target="_blank" class="bg-floral-600 hover:bg-floral-700 text-white font-bold py-3 px-8 rounded-full transition shadow-lg inline-flex items-center">
+                        <i class="fab fa-whatsapp mr-2"></i> Fale Conosco
+                    </a>
+                    <a href="#produtos" class="bg-white text-floral-700 hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition shadow-lg">
+                        Ver Produtos
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quem Somos / Sobre -->
+        <section id="sobre" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h3 class="text-3xl font-bold text-center text-terra-800 mb-12 section-title">Quem Somos</h3>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Interior de uma floricultura com diversas plantas e flores" class="rounded-lg shadow-xl w-full h-80 object-cover">
+                    </div>
+                    <div class="text-gray-600 leading-relaxed space-y-4">
+                        <p>
+                            A <strong>Floricultura Flori e Bela</strong>, registrada sob o CNPJ <strong>05.475.756/0001-00</strong> e razão social <strong>Inara Sued Nascimento Costa</strong>, é uma empresa brasiliense fundada em <strong>30/12/2002</strong>. 
+                            Com mais de duas décadas de história, temos orgulho de servir a comunidade do Riacho Fundo I e de todo o Distrito Federal.
+                        </p>
+                        <p>
+                            Nossa atividade principal é o <strong>comércio varejista de plantas e flores naturais</strong>. Trabalhamos com uma variedade de produtos que incluem flores para presentes, plantas ornamentais, itens de jardinagem, e também artigos para recreação e presentes.
+                        </p>
+                        <p>
+                            Nosso compromisso é oferecer qualidade, beleza e um atendimento acolhedor para transformar momentos especiais em memórias inesquecíveis. 
+                            Somos uma microempresa optante pelo Simples Nacional, e atuamos com transparência e dedicação.
+                        </p>
+                        <ul class="space-y-2 text-sm">
+                            <li><i class="fas fa-check-circle text-floral-500 mr-2"></i> <strong>Situação Cadastral:</strong> Ativa</li>
+                            <li><i class="fas fa-check-circle text-floral-500 mr-2"></i> <strong>Data de Abertura:</strong> 30/12/2002</li>
+                            <li><i class="fas fa-check-circle text-floral-500 mr-2"></i> <strong>Natureza Jurídica:</strong> Empresário (Individual)</li>
+                            <li><i class="fas fa-check-circle text-floral-500 mr-2"></i> <strong>Porte:</strong> Micro Empresa</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Produtos / Atividades -->
+        <section id="produtos" class="py-16 bg-floral-50">
+            <div class="container mx-auto px-4">
+                <h3 class="text-3xl font-bold text-center text-terra-800 mb-12 section-title">Nossos Produtos e Serviços</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+                        <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Buquê de flores naturais coloridas" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-terra-800 mb-2">Flores Naturais</h4>
+                            <p class="text-gray-600 text-sm">
+                                Comércio varejista de plantas e flores naturais (CNAE 47.89-0-02). Buquês, arranjos e flores para todas as ocasiões.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+                        <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Produtos de limpeza e saneantes domésticos" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-terra-800 mb-2">Saneantes Domissanitários</h4>
+                            <p class="text-gray-600 text-sm">
+                                Comércio varejista de produtos saneantes domissanitários (CNAE 47.89-0-05). Itens para limpeza e conservação.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+                        <img src="https://images.unsplash.com/photo-1532330393533-443990a51d10?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Brinquedos e artigos recreativos" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-terra-800 mb-2">Brinquedos e Recreação</h4>
+                            <p class="text-gray-600 text-sm">
+                                Comércio varejista de brinquedos e artigos recreativos (CNAE 47.63-6-01). Opções de presentes para todas as idades.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section id="contato" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h3 class="text-3xl font-bold text-center text-terra-800 mb-12 section-title">Fale Conosco</h3>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Informações de Contato -->
+                    <div class="space-y-6">
+                        <p class="text-gray-600 mb-4">
+                            Estamos prontos para atender você. Entre em contato para fazer pedidos, tirar dúvidas ou solicitar um orçamento.
+                        </p>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-floral-100 p-3 rounded-full">
+                                <i class="fas fa-phone-alt text-floral-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-terra-800">Telefone / WhatsApp</h4>
+                                <p class="text-gray-600">(62) 99302-6597</p>
+                                <a href="https://wa.me/5562993026597" target="_blank" class="text-floral-600 text-sm hover:underline">Chamar no WhatsApp</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-floral-100 p-3 rounded-full">
+                                <i class="fas fa-envelope text-floral-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-terra-800">E-mail</h4>
+                                <p class="text-gray-600">kleber@planuscontabilidade.com</p>
+                                <a href="mailto:kleber@planuscontabilidade.com" class="text-floral-600 text-sm hover:underline">Enviar E-mail</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-floral-100 p-3 rounded-full">
+                                <i class="fas fa-map-marker-alt text-floral-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-terra-800">Endereço</h4>
+                                <p class="text-gray-600">
+                                    Quadra CLS 4 Bloco A (Comércio), Lj 02<br>
+                                    Lote 02 - Riacho Fundo I<br>
+                                    Brasília - DF, CEP: 71820-511
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulário de Contato Simples (Necessário para Google Ads) -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-inner">
+                        <h4 class="text-xl font-bold text-terra-800 mb-4">Envie uma mensagem</h4>
+                        <form action="#" method="POST" class="space-y-4">
+                            <div>
+                                <label for="nome" class="block text-sm font-medium text-gray-700">Nome</label>
+                                <input type="text" id="nome" name="nome" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-floral-500 focus:border-floral-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700">E-mail</label>
+                                <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-floral-500 focus:border-floral-500">
+                            </div>
+                            <div>
+                                <label for="mensagem" class="block text-sm font-medium text-gray-700">Mensagem</label>
+                                <textarea id="mensagem" name="mensagem" rows="4" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-floral-500 focus:border-floral-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-floral-600 hover:bg-floral-700 text-white font-bold py-2 px-4 rounded-md transition">
+                                Enviar Mensagem
+                            </button>
+                            <p class="text-xs text-gray-500 mt-2">Ao enviar, você concorda com nossa Política de Privacidade.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Localização -->
+        <section id="localizacao" class="py-16 bg-floral-50">
+            <div class="container mx-auto px-4">
+                <h3 class="text-3xl font-bold text-center text-terra-800 mb-12 section-title">Onde Estamos</h3>
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <!-- Mapa Incorporado -->
+                    <div class="aspect-w-16 aspect-h-9 w-full h-80 bg-gray-200 rounded-md mb-4">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.123456789!2d-48.0123456789!3d-15.87654321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTXCsDUyJzM1LjYiUyA0OMKwMDAnNDQuNCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Localização da Floricultura Flori e Bela">
+                        </iframe>
+                    </div>
+                    <div class="text-center text-gray-700">
+                        <p class="font-semibold">Floricultura Flori e Bela</p>
+                        <p>Quadra CLS 4 Bloco A, Lj 02 - Riacho Fundo I, Brasília - DF</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Rodapé) -->
+    <footer class="bg-terra-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-floral-300">Flori e Bela</h4>
+                    <p class="text-sm text-gray-400">
+                        Florescendo momentos desde 2002. Flores naturais, plantas e presentes com carinho para Brasília.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-floral-300">Links Rápidos</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition">Início</a></li>
+                        <li><a href="#sobre" class="hover:text-white transition">Quem Somos</a></li>
+                        <li><a href="#produtos" class="hover:text-white transition">Produtos</a></li>
+                        <li><a href="#contato" class="hover:text-white transition">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-floral-300">Informações Legais</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#politica-privacidade" class="hover:text-white transition">Política de Privacidade</a></li>
+                        <li><a href="#termos-servico" class="hover:text-white transition">Termos de Serviço</a></li>
+                        <li><a href="#politica-envio" class="hover:text-white transition">Política de Envio</a></li>
+                        <li><a href="#politica-devolucao" class="hover:text-white transition">Política de Devolução</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-floral-300">Dados da Empresa</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><strong>Razão Social:</strong> Inara Sued Nascimento Costa</li>
+                        <li><strong>CNPJ:</strong> 05.475.756/0001-00</li>
+                        <li><strong>Endereço:</strong> Quadra CLS 4 Bloco A, Lj 02, Lote 02, Riacho Fundo I, Brasília/DF, CEP: 71820-511</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-6 text-center text-sm text-gray-500">
+                <p>&copy; 2026 Floricultura Flori e Bela. Todos os direitos reservados.</p>
+                <p class="mt-2">CNPJ: 05.475.756/0001-00 | Situação: Ativa</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Seções de Políticas e Termos (Ocultas visualmente mas essenciais para Ads e G2) -->
+    <!-- Nota: Para o Google Ads, é recomendado ter estas páginas em URLs separadas. Aqui, usamos âncoras no rodapé com texto completo para garantir que o conteúdo esteja no site. -->
+    
+    <div id="politica-privacidade" class="container mx-auto px-4 py-12 text-sm text-gray-600">
+        <hr class="my-8 border-gray-300">
+        <h2 class="text-2xl font-bold text-terra-800 mb-4">Política de Privacidade</h2>
+        <p class="mb-4">Última atualização: 24/09/2026</p>
+        <p class="mb-4">
+            A Floricultura Flori e Bela (CNPJ: 05.475.756/0001-00) valoriza a sua privacidade. Esta política descreve como coletamos, usamos e protegemos suas informações pessoais quando você visita nosso site ou entra em contato conosco.
+        </p>
+        <h3 class="text-lg font-semibold text-terra-700 mt-4 mb-2">Coleta de Informações</h3>
+        <p class="mb-4">
+            Coletamos informações que você nos fornece voluntariamente através de nosso formulário de contato ou WhatsApp, como nome, e-mail e telefone. Também podemos coletar dados de navegação anônimos (como endereço IP, tipo de navegador e páginas visitadas) para fins estatísticos e de melhoria do site.
+        </p>
+        <h3 class="text-lg font-semibold text-terra-700 mt-4 mb-2">Uso das Informações</h3>
+        <p class="mb-4">
+            Utilizamos suas informações para:
+            <ul class="list-disc ml-6 mb-4">
+                <li>Responder a suas solicitações e pedidos;</li>
+                <li>Melhorar nossos produtos e serviços;</li>
+                <li>Enviar comunicações promocionais (caso você tenha consentido);</li>
+                <li>Cumprir obrigações legais.</li>
+            </ul>
+        </p>
+        <h3 class="text-lg font-semibold text-terra-700 mt-4 mb-2">Compartilhamento de Dados</h3>
+        <p class="mb-4">
+            Não vendemos, alugamos ou compartilhamos suas informações pessoais com terceiros para fins de marketing sem o seu consentimento. Podemos compartilhar dados com prestadores de serviços essenciais (como processadores de pagamento e serviços de entrega) estritamente para concluir uma transação solicitada por você.
+        </p>
+        <h3 class="text-lg font-semibold text-terra-700 mt-4 mb-2">Seus Direitos</h3>
+        <p class="mb-4">
+            Você tem o direito de solicitar acesso, correção ou exclusão de seus dados pessoais. Para exercer esses direitos, entre em contato pelo e-mail kleber@planuscontabilidade.com.
+        </p>
+        <h3 class="text-lg font-semibold text-terra-700 mt-4 mb-2">Cookies</h3>
+        <p class="mb-4">
+            Nosso site pode usar cookies para melhorar sua experiência de navegação. Você pode desativar os cookies nas configurações do seu navegador, embora isso possa afetar a funcionalidade do site.
+        </p>
+    </div>
+
+    <div id="termos-servico" class="container mx-auto px-4 py-12 text-sm text-gray-600 bg-gray-100">
+        <h2 class="text-2xl font-bold text-terra-800 mb-4">Termos de Serviço</h2>
+        <p class="mb-4">Última atualização: 24/09/2026</p>
+        <p class="mb-4">
+            Ao acessar e usar o site da Floricultura Flori e Bela, você concorda com os seguintes termos e condições:
+        </p>
+        <h3 class="text-lg font-semibold text-terra-700 mt-4 mb-2">1. Uso do Site</h3>
+        <p class="mb-4">
+            Este site é destinado à divulgação de nossos produtos e serviços e à comunicação com nossos clientes. Você concorda em usar o site apenas para fins legais e de maneira que não infrinja os direitos de terceiros.
+        </p>
+        <h3 class="text-lg font-semibold text-terra-700 mt-4 mb-2">2. Propriedade Intelectual</h3>
+        <p class="mb-4">
+            Todo o conteúdo deste site, incluindo textos, imagens, logotipos e design, é de propriedade da Floricultura Flori e Bela ou de seus licenciadores e está protegido por leis de direitos autorais. É proibida a reprodução sem autorização prévia por escrito.
+        </p>
+        <h3 class="text-lg font-semibold text-terra-700 mt-4 mb-2">3. Limitação de Responsabilidade</h3>
+        <p class="mb-4">
+            As informações contidas neste site são fornecidas "como estão". Embora nos esforcemos para manter as informações precisas e atualizadas, não garantimos a ausência de erros. A Floricultura Flori e Bela não se responsabiliza por danos diretos ou indiretos decorrentes do uso deste site.
+        </p>
+        <h3 class="text-lg font-semibold text-terra-700 mt-4 mb-2">4. Links para Terceiros</h3>
+        <p class="mb-4">
+            Nosso site pode conter links para sites de terceiros (como WhatsApp e Google Maps). Não somos responsáveis pelas práticas de privacidade ou conteúdo desses sites.
+        </p>
+        <h3 class="text-lg font-semibold text-terra-700 mt-4 mb-2">5. Legislação Aplicável</h3>
+        <p class="mb-4">
+            Estes termos são regidos pelas leis brasileiras. Qualquer disputa será resolvida no foro da comarca de Brasília, Distrito Federal.
+        </p>
+    </div>
+
+    <div id="politica-envio" class="container mx-auto px-4 py-12 text-sm text-gray-600">
+        <h2 class="text-2xl font-bold text-terra-800 mb-4">Política de Envio e Entrega</h2>
+        <p class="mb-4">
+            A Floricultura Flori e Bela realiza entregas de flores e plantas naturais na região de Brasília, especialmente no Riacho Fundo I e adjacências. Para produtos de outras categorias (saneantes, brinquedos), consulte a disponibilidade de entrega no momento do pedido.
+        </p>
+        <h3 class="text-lg font-semibold text-terra-700 mt-4 mb-2">Prazos e Custos</h3>
+        <p class="mb-4">
+            O prazo e o custo de entrega variam conforme a localização e o produto. Essas informações serão fornecidas no momento da confirmação do pedido via WhatsApp ou telefone. Não realizamos entregas fora da região do Distrito Federal sem consulta prévia.
+        </p>
+        <h3 class="text-lg font-semibold text-terra-700 mt-4 mb-2">Rastreamento</h3>
+        <p class="mb-4">
+            Para pedidos de flores, o acompanhamento da entrega pode ser feito através do contato direto conosco pelo telefone (62) 99302-6597.
+        </p>
+    </div>
+
+    <div id="politica-devolucao" class="container mx-auto px-4 py-12 text-sm text-gray-600 bg-gray-100">
+        <h2 class="text-2xl font-bold text-terra-800 mb-4">Política de Devolução e Reembolso</h2>
+        <p class="mb-4">
+            Nosso compromisso é com a sua satisfação. Se você não estiver satisfeito com um produto ou serviço, entre em contato conosco imediatamente.
+        </p>
+        <h3 class="text-lg font-semibold text-terra-700 mt-4 mb-2">Flores e Plantas Naturais</h3>
+        <p class="mb-4">
+            Devido à natureza perecível das flores e plantas naturais, devoluções são avaliadas caso a caso. Se você receber um produto com defeito ou diferente do solicitado, entre em contato em até 24 horas após o recebimento para que possamos resolver o problema.
+        </p>
+        <h3 class="text-lg font-semibold text-terra-700 mt-4 mb-2">Outros Produtos</h3>
+        <p class="mb-4">
+            Para produtos de outras categorias (saneantes, brinquedos), aplicam-se as regras do Código de Defesa do Consumidor. O prazo para desistência é de 7 dias corridos após o recebimento, desde que o produto esteja em sua embalagem original e sem uso.
+        </p>
+        <h3 class="text-lg font-semibold text-terra-700 mt-4 mb-2">Como Solicitar</h3>
+        <p class="mb-4">
+            Para solicitar uma devolução, entre em contato pelo telefone (62) 99302-6597 ou e-mail kleber@planuscontabilidade.com com o número do pedido e o motivo da devolução. Analisaremos seu caso e forneceremos as instruções necessárias.
+        </p>
+    </div>
+
+    <script>
+        // Script simples para o menu mobile
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+            menu.classList.toggle('flex-col');
+            menu.classList.toggle('absolute');
+            menu.classList.toggle('top-16');
+            menu.classList.toggle('left-0');
+            menu.classList.toggle('w-full');
+            menu.classList.toggle('bg-white');
+            menu.classList.toggle('p-4');
+            menu.classList.toggle('shadow-md');
+        });
+
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('#menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (!menu.classList.contains('hidden')) {
+                    menu.classList.add('hidden');
+                    menu.classList.remove('flex');
+                    menu.classList.remove('flex-col');
+                    menu.classList.remove('absolute');
+                    menu.classList.remove('top-16');
+                    menu.classList.remove('left-0');
+                    menu.classList.remove('w-full');
+                    menu.classList.remove('bg-white');
+                    menu.classList.remove('p-4');
+                    menu.classList.remove('shadow-md');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
